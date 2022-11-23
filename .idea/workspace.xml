@@ -4,31 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fb78ee3-4efc-40f4-9e9d-846fd84d4d5c" name="Changes" comment="add microservice">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/Dto/AccountDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/Dto/AccountRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/Dto/AccountResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/Entity/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/Repository/AccountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/controller/AccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/exception/AccountException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/Dto/BillRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/Dto/BillResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/Entity/Bill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/Exception/BillNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/Repository/BillRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/controller/BillController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/service/BillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="9fb78ee3-4efc-40f4-9e9d-846fd84d4d5c" name="Changes" comment="add repository, services, controllers">
+      <change afterPath="$PROJECT_DIR$/deposit-service/src/main/java/com/javastart/deposit/Entity/Deposit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deposit-service/src/main/java/com/javastart/deposit/Repository/DepositRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/javastart/notification/Service/DepositMessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/javastart/notification/Service/DepositResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/javastart/notification/config/MailConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/javastart/notification/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/resources/mail-properties.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/AccountApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/javastart/account/AccountApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/BillApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/bill-service/src/main/java/com/javastart/bill/BillApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/java/com/javastart/config/ConfigApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/java/com/javastart/config/ConfigApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/javastart/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/javastart/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registry/src/main/java/com/javastart/registry/RegistryNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/registry/src/main/java/com/javastart/registry/RegistryNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deposit-service/src/main/java/com/javastart/deposit/DepositApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/deposit-service/src/main/java/com/javastart/deposit/DepositApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/javastart/notification/NotificationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/javastart/notification/NotificationApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +69,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -116,25 +102,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/USER/spring-cloud-microservice/registry/src/main/resources",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "9f0d3f9faaeca4e4fef77c045a2b48de"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/spring-cloud-microservice/registry/src/main/resources&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9f0d3f9faaeca4e4fef77c045a2b48de&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\USER\spring-cloud-microservice\registry\src\main\resources" />
@@ -154,7 +140,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BillApplication">
+  <component name="RunManager" selected="Spring Boot.ConfigApplication">
     <configuration name="spring-cloud-microservice:config-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -230,10 +216,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ConfigApplication" />
         <item itemvalue="Spring Boot.BillApplication" />
         <item itemvalue="Spring Boot.AccountApplication" />
         <item itemvalue="Spring Boot.RegistryNotification" />
-        <item itemvalue="Spring Boot.ConfigApplication" />
         <item itemvalue="Gradle.spring-cloud-microservice:config-service [build]" />
       </list>
     </recent_temporary>
@@ -248,8 +234,18 @@
       <updated>1669048044392</updated>
       <workItem from="1669048054054" duration="9506000" />
       <workItem from="1669194697340" duration="744000" />
-      <workItem from="1669196597901" duration="9645000" />
+      <workItem from="1669196597901" duration="10747000" />
+      <workItem from="1669229754630" duration="452000" />
+      <workItem from="1669231142900" duration="5624000" />
     </task>
+    <task id="LOCAL-00001" summary="add repository, services, controllers">
+      <created>1669207284570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669207284571</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +264,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add microservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="add microservice" />
+    <MESSAGE value="add repository, services, controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="add repository, services, controllers" />
   </component>
 </project>
