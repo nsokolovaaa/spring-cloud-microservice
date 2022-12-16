@@ -5,8 +5,8 @@ spring:
     config:
       uri: http://config-service:8001
       fail-fast: true
-      password: root
-      username: postgres
+      password: admin
+      username: user
 
 eureka:
   instance:

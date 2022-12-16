@@ -5,6 +5,6 @@ spring:
     config:
       uri: http://config-service:8001
       fail-fast: true
-      password: postgres
-      username: root
+      password: admin
+      username: user
 
