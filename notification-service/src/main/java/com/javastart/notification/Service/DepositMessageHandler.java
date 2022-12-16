@@ -10,8 +10,10 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class DepositMessageHandler {
+
     private final JavaMailSender javaMailSender;
 
     @Autowired
@@ -22,21 +24,24 @@ public class DepositMessageHandler {
     @RabbitListener(queues = RabbitMQConfig.QUEUE_DEPOSIT)
     public void receive(Message message) throws JsonProcessingException {
         System.out.println(message);
-        byte[] getMessage = message.getBody();
-        String jsonBody = new String(getMessage);
+        byte[] body = message.getBody();
+        String jsonBody = new String(body);
         ObjectMapper objectMapper = new ObjectMapper();
-        DepositResponseDto depositResponseDto = objectMapper.readValue(jsonBody, DepositResponseDto.class);
-        System.out.println(depositResponseDto);
+        DepositResponseDTO depositResponseDTO = objectMapper.readValue(jsonBody, DepositResponseDTO.class);
+        System.out.println(depositResponseDTO);
+
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(depositResponseDto.getEmail());
+        mailMessage.setTo(depositResponseDTO.getMail());
         mailMessage.setFrom("java.sms11@gmail.com");
 
         mailMessage.setSubject("Deposit");
-        mailMessage.setText("Make deposit, sum: " + depositResponseDto.getAmount());
+        mailMessage.setText("Make deposit, sum:" + depositResponseDTO.getAmount());
+
         try {
             javaMailSender.send(mailMessage);
-        } catch (Exception e) {
-            System.out.println("Exception");
+        } catch (Exception exception) {
+            System.out.println(exception);
         }
     }
 }
+

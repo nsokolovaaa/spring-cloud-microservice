@@ -13,6 +13,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:mail-properties.properties")
 public class MailConfig {
+
     @Autowired
     private Environment environment;
 
@@ -21,8 +22,9 @@ public class MailConfig {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smpt.gmail.com");
         mailSender.setPort(587);
-        mailSender.setPassword(environment.getProperty("mail.password"));
+
         mailSender.setUsername(environment.getProperty("mail.username"));
+        mailSender.setPassword(environment.getProperty("mail.password"));
 
         Properties properties = mailSender.getJavaMailProperties();
         properties.put("mail.transport.protocol", environment.getProperty("mail.transport.protocol"));
@@ -30,8 +32,6 @@ public class MailConfig {
         properties.put("mail.smtp.starttls.enable", environment.getProperty("mail.smtp.starttls.enable"));
         properties.put("mail.debug", environment.getProperty("mail.debug"));
         return mailSender;
-
-
     }
-
 }
+

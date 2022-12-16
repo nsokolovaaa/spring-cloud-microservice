@@ -3,8 +3,8 @@ spring:
     name: gateway
   cloud:
     config:
-      uri: http://localhost:8001
+      uri: http://192.168.100.1:8001
       fail-fast: true
-      password: admin
-      username: user
+      password: root
+      username: postgres
 

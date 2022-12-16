@@ -3,10 +3,11 @@ spring:
     name: registry
   cloud:
     config:
-      uri: http://localhost:8001
+      uri: http://config-service:8001
       fail-fast: true
-      password: admin
-      username: user
+      password: root
+      username: postgres
+
 eureka:
   instance:
     preferIpAddress: true
@@ -17,4 +18,3 @@ eureka:
       waitTimeInMsWhenSyncEmpty: 0
   server:
     peer-node-read-timeout-ms: 100000
-

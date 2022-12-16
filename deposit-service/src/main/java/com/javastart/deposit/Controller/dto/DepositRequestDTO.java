@@ -1,11 +1,13 @@
-package com.javastart.deposit.Dto;
+package com.javastart.deposit.Controller.dto;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
+
 @Getter
 @Setter
-public class DepositRequestDto {
+public class DepositRequestDTO {
 
     private Long accountId;
 

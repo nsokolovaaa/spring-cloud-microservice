@@ -10,9 +10,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableRabbit
 public class RabbitMQConfig {
-    public static final String QUEUE_DEPOSIT = "js.deposit";
-    private static final String ROUTING_KEY_DEPOSIT = "js.key.deposit";
+
+    public static final String QUEUE_DEPOSIT = "js.deposit.notify";
     private static final String TOPIC_EXCHANGE_DEPOSIT = "js.deposit.notify.exchange";
+    private static final String ROUTING_KEY_DEPOSIT = "js.key.deposit";
 
     @Autowired
     private AmqpAdmin amqpAdmin;
@@ -34,4 +35,5 @@ public class RabbitMQConfig {
                 .to(depositExchange())
                 .with(ROUTING_KEY_DEPOSIT);
     }
+
 }

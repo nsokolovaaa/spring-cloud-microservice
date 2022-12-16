@@ -1,12 +1,18 @@
 package com.javastart.deposit.Dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.math.BigDecimal;
-@Data
-public class DepositResponseDto {
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class DepositResponseDto{
+
     private BigDecimal amount;
-    private String email;
+
+    private String mail;
 }
 
 
