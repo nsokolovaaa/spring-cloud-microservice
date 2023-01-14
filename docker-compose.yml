@@ -35,7 +35,6 @@ services:
       - config-service
       - registry
 
-
   bill-service:
     restart: on-failure
     container_name: bill-service
@@ -49,7 +48,6 @@ services:
   deposit-service:
     restart: on-failure
     container_name: deposit-service
-    #    image: deposit-service-test3:latest
     build: deposit-service
     ports:
       - 9090:9090
